@@ -1,9 +1,11 @@
 # Backlog de Historias de Usuario — Portal de Cotizaciones
 
-> Fuente original: [`Historias-de-Usuario.xlsx`](../Historias-de-Usuario.xlsx) (hoja "Historias de Usuario", v0.3 revisión Compras).
+> Fuente original: [`v1/Historias-de-Usuario (1).xlsx`](v1/) (hoja "Historias de Usuario", v0.3 revisión Compras + 5 nuevas pendientes de validar, US-71 a US-75). La versión anterior (v0.3, 70 historias) es [`Historias-de-Usuario.xlsx`](../Historias-de-Usuario.xlsx) en la raíz.
 > Este documento es una versión legible en Markdown del mismo contenido, para que quede disponible como contexto de trabajo. **El Excel es la fuente autoritativa** (tiene además columnas de Prioridad MoSCoW, Estimación y Notas que no se repiten acá) — si hay una edición futura del backlog, actualizar el Excel y regenerar este archivo.
 
-**Totales:** 70 historias · 42 Mínimo (MVP) · 11 Versión 2 · 17 Fuera de la plataforma.
+**Totales:** 75 historias · 45 Mínimo (MVP) · 13 Versión 2 · 17 Fuera de la plataforma.
+
+**Novedades v1 (marcadas con [v1]):** US-72, US-73 y US-74 entran al MVP; US-71 y US-75 van a Versión 2. Ninguna historia anterior cambió de texto ni de categoría.
 
 Cada ítem: **ID** (rol) — historia, con su criterio de aceptación y dependencias (IDs de otras historias que deben resolverse antes).
 
@@ -67,6 +69,9 @@ Cada ítem: **ID** (rol) — historia, con su criterio de aceptación y dependen
 - **US-21** (Proveedor) — quiero recibir un recordatorio antes del vencimiento si todavía no cargué mi oferta, para no perder la oportunidad de cotizar.
   - *Criterio de aceptación:* El comprador define los tiempos del aviso; solo aplica a quien no subió oferta aún.
   - *Dependencias:* US-46
+- **US-74** [v1] (Proveedor) — quiero responder la licitación subiendo un PDF, un Excel, o escribiendo la oferta directamente en el historial del caso, para tener flexibilidad en cómo presento mi cotización.
+  - *Criterio de aceptación:* La oferta puede cargarse como PDF, Excel, o texto en el historial del caso; en los tres casos queda fechada y asociada a mi invitación. (Nuevo — amplía el diseño v0.3 de "re-subir el Excel" de US-13.)
+  - *Dependencias:* US-13
 
 ### 4 · Cierre, comparativa y adjudicación
 
@@ -85,6 +90,9 @@ Cada ítem: **ID** (rol) — historia, con su criterio de aceptación y dependen
 - **US-23** (Comprador) — quiero lanzar una 2ª ronda tras la Apertura, donde TODOS los proveedores que participaron deben volver a cotizar, para negociar mejores condiciones sin perder trazabilidad.
   - *Criterio de aceptación:* La oferta anterior queda versionada (ya no vigente). Distinto de la extensión (US-61), que solo agrega gente.
   - *Dependencias:* US-70
+- **US-72** [v1] (Comprador) — quiero lanzar una 2ª ronda parcial, eligiendo solo a un sub-conjunto de los proveedores que ya cotizaron, para pedir una mejora puntual sin reabrir todo el proceso cuando no hace falta.
+  - *Criterio de aceptación:* El comprador selecciona cuáles proveedores deben volver a cotizar; los no seleccionados mantienen su oferta vigente sin re-versionar. Distinto de la 2ª ronda total (US-23, TODOS recotizan) y de la Reconsulta (US-16, no fuerza a recotizar). (Nuevo — variante adicional, NO reemplaza la 2ª ronda total.)
+  - *Dependencias:* US-23, US-70
 - **US-24** (Jefe de Compras / Comprador) — quiero cancelar/anular un caso con registro (archivar o declarar desierta), para descartar cotizaciones sin perder la traza.
   - *Criterio de aceptación:* Requiere justificación; queda el histórico.
   - *Dependencias:* US-04, US-50
@@ -130,6 +138,9 @@ Cada ítem: **ID** (rol) — historia, con su criterio de aceptación y dependen
 - **US-68** (Proveedor) — quiero recibir un aviso cuando se lanza una 2ª ronda, para saber que debo volver a cotizar.
   - *Criterio de aceptación:* Mail automático al lanzar la 2ª ronda (US-23).
   - *Dependencias:* US-23
+- **US-73** [v1] (Proveedor) — quiero tildar un checkbox al enviar mi cotización para recibir un mail de confirmación con el detalle de lo que cargué, para tener un comprobante propio sin volver a entrar al portal.
+  - *Criterio de aceptación:* Si tildo el checkbox al re-subir mi oferta, recibo un mail con fecha/hora, ítems y adjuntos cargados; si no lo tildo, no se envía ese mail adicional. (Nuevo — mail opcional, distinto del aviso interno al comprador de US-46.)
+  - *Dependencias:* US-13, US-46
 
 ### 7 · Seguridad y trazabilidad
 
@@ -165,6 +176,9 @@ Cada ítem: **ID** (rol) — historia, con su criterio de aceptación y dependen
 - **US-05** (Comprador) — quiero cargar varias cotizaciones juntas desde un Excel, para ahorrar tiempo en cargas masivas.
   - *Criterio de aceptación:* No se trabaja a nivel 'líneas de ítem'; es carga de casos.
   - *Dependencias:* US-01, US-03
+- **US-71** [v1] (Comprador) — quiero que si una licitación se sube automáticamente al sistema desde SAP y no amerita pasar por el proceso formal, el caso se cierre automáticamente o ni siquiera se genere, para no gestionar licitaciones innecesarias cuando ya se sabe de antemano que no corresponde cotizar.
+  - *Criterio de aceptación:* Los criterios para decidir cuándo un caso no amerita licitación (ej. por proveedor único, por monto, u otro) todavía no están definidos — se terminarán de definir en la etapa inicial de desarrollo. (Nuevo — falta definir bien; el Excel referencia `docs/10-arquitectura-sistema-gaps.md`, que no está en esta carpeta.)
+  - *Dependencias:* US-01
 
 ### 4 · Cierre, comparativa y adjudicación
 
@@ -206,6 +220,12 @@ Cada ítem: **ID** (rol) — historia, con su criterio de aceptación y dependen
 
 - **US-58** (Responsable de datos) — quiero dejar previsto el 'tipo de evento' en el modelo (RFI/RFP a futuro), para no rehacer el modelo después.
   - *Criterio de aceptación:* Etapa posterior.
+
+### 9 · Seguimiento de precios de mercado (futuro)
+
+- **US-75** [v1] (Jefe de Compras) — quiero registrar todos los precios cotizados y no solamente el precio adjudicado, para el posterior procesamiento y la generación de una base de datos unificada de precios.
+  - *Criterio de aceptación:* Se guarda el precio cotizado por cada oferta recibida, gane o no la licitación, como insumo para procesarlos después y armar una base de datos unificada de precios de mercado por material. (Nuevo — iniciativa a futuro, evaluar si es Fase 2 o una fase posterior.)
+  - *Dependencias:* US-38, US-42
 
 ## Fuera de la plataforma
 

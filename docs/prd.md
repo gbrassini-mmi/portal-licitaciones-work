@@ -2,7 +2,9 @@
 
 Documento de Requisitos de Producto · Batfer · alternativa interna a SAP Ariba
 
-**Versión 0.4 (borrador)** — roles (Jefe de Compras coordinador), extensión vs 2ª ronda, notificaciones, fecha límite obligatoria.
+**Versión 0.4 (borrador) + RF-39 a RF-43** — roles (Jefe de Compras coordinador), extensión vs 2ª ronda, notificaciones, fecha límite obligatoria + relevamiento adicional (RF-39 a RF-43, pendientes de validar).
+
+> **Actualización v1 (sep-2026):** fuente original en [`v1/PRD-Portal-Cotizaciones (2).pdf`](v1/). Respecto de la v0.4 solo se agregaron RF-39 a RF-43 (§6) — el resto del documento no cambió. Ver el impacto y las dudas abiertas en [`kickoff-temas.md`](kickoff-temas.md).
 
 > Nota de origen: este archivo consolida `PRD-Portal-Cotizaciones.md`. Había un segundo archivo (`PRD-Portal-Cotizaciones (1).md`) con el mismo contenido pero con errores de OCR/exportación (ligaduras rotas: "cotzación" en vez de "cotización", etc.) — es un duplicado, no una versión distinta; se puede borrar cuando se confirme que no hace falta.
 
@@ -108,7 +110,7 @@ Entidades: `CASO_QR` (contenedor) → `QR_PROVEEDOR` (llave) → `OFERTA` → `A
 | RF-06 | Tomar los proveedores desde SAP (export/lectura) y elegir al invitar (desplegable/buscador). | MVP |
 | RF-07 | Invitar N proveedores (crea un vínculo caso-proveedor por cada uno). | MVP |
 | RF-08 | El proveedor recibe la invitación por mail, entra al portal, la acepta/rechaza y ve solo lo suyo. | MVP |
-| RF-09 | El proveedor descarga la planilla, la completa y re-sube su oferta con adjuntos. | MVP |
+| RF-09 | El proveedor descarga la planilla, la completa y re-sube su oferta con adjuntos. (Ampliado por RF-41.) | MVP |
 | RF-10 | Portal bilingüe ES/EN para el proveedor. | MVP |
 | RF-11 | Reconsultar (misma ronda, antes del cierre) a todos o algunos — no fuerza a recotizar a quien no fue reconsultado. | MVP |
 | RF-12 | Q&A dentro del portal (toda interacción formal en el portal, no en el mail). | MVP |
@@ -119,7 +121,7 @@ Entidades: `CASO_QR` (contenedor) → `QR_PROVEEDOR` (llave) → `OFERTA` → `A
 | RF-17 | Ventana de reapertura entre Cierre y Apertura, para que un proveedor rezagado cargue su oferta — solo si aún no se abrió. | MVP |
 | RF-18 | Cancelar/declarar desierta con justificación (queda la traza). | MVP |
 | RF-19 | Apertura: acción manual del comprador para ver las ofertas. Desde aquí ya no se puede extender ni reabrir. | MVP |
-| RF-20 | 2ª ronda (opcional, tras la Apertura): TODOS los proveedores deben recotizar; oferta anterior versionada, ya no vigente. | MVP |
+| RF-20 | 2ª ronda (opcional, tras la Apertura): TODOS los proveedores deben recotizar; oferta anterior versionada, ya no vigente. (Variante parcial en RF-39.) | MVP |
 | RF-21 | Jefe de Compras: reasignar un caso a otro comprador de su misma área. | MVP |
 | RF-22 | Jefe de Compras: intervenir — actuar sobre un caso de su área con las mismas capacidades del comprador titular. | MVP |
 | RF-23 | Registrar la adjudicación (puede ser parcial) → estado "Adjudicada". La OC se hace en SAP. | MVP |
@@ -138,6 +140,11 @@ Entidades: `CASO_QR` (contenedor) → `QR_PROVEEDOR` (llave) → `OFERTA` → `A
 | RF-36 | Conectar la comparativa/adjudicación/memo con SAP. | F2 |
 | RF-37 | Buscar dentro de archivos · bajadas masivas · 2FA · tipo de evento (RFI/RFP) · carga masiva de casos. | F2 |
 | RF-38 | DEYEL automático · oferta ítem-por-ítem · proveedor ve resultado · adjudicación por línea · scoring/TCO/subastas/envelope · dashboard KPIs · digests · reglas editables · autoregistro/onboarding de proveedores (gestión en SAP) · volcar OC a SAP · app mobile nativa. | Fuera |
+| RF-39 | **[v1]** 2ª ronda parcial: elegir solo un sub-conjunto de los proveedores que ya cotizaron, sin forzar a todos (variante adicional a RF-20, no la reemplaza). | MVP |
+| RF-40 | **[v1]** El proveedor puede tildar un checkbox al enviar su oferta para recibir un mail de confirmación con el detalle cargado. | MVP |
+| RF-41 | **[v1]** El proveedor puede responder con PDF, Excel o texto libre en el historial del caso (amplía RF-09). | MVP |
+| RF-42 | **[v1]** Si una licitación se sube automáticamente desde SAP y no amerita proceso formal, el caso se cierra automáticamente o ni se genera. Criterios aún sin definir. | F2 |
+| RF-43 | **[v1]** Registrar todos los precios cotizados, no solo el adjudicado, para su posterior procesamiento y una base de datos unificada de precios de mercado. | F2 |
 
 ## 7 · Requisitos no funcionales
 

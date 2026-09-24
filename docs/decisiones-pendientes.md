@@ -41,6 +41,18 @@ Extraído del Anexo A del PRD (`docs/prd.md`) y de las notas dispersas en los do
 - **Stack técnico:** lo decide Chivilo (desarrollo externo); sugerencia de usar herramientas Google. Debe cumplir los requisitos no funcionales (24/7, volumen, aislamiento por fila, búsqueda) — ver PRD §15.
 - **Revisor de seguridad:** el aislamiento entre proveedores (CA-07) y en general el modelo de permisos deben auditarse con un revisor de seguridad antes de producción — todavía no asignado/agendado.
 
+## Nuevos pendientes por los requisitos v1 (US-71 a US-75)
+
+Detalle y propuestas en [`kickoff-temas.md`](kickoff-temas.md).
+
+- **2ª ronda parcial (US-72):** ¿las nuevas ofertas vuelven a quedar selladas hasta una nueva Apertura? ¿Tiene fecha límite y auto-close propios? ¿Hace falta justificar la selección?
+- **Oferta en texto libre (US-74):** tiene que tratarse como oferta (sellada y versionada), no como mensaje del Q&A. ¿Se permite ofertar sin la planilla Excel?
+- **Hash de integridad:** extenderlo de "cada Excel" (RF-27) a todo archivo y al texto de la oferta.
+- **Mail de confirmación (US-73):** contenido (sin interpretar el Excel) e idioma.
+- **Origen automático desde SAP (US-71):** supone un import desde SAP/SOLPED que el PRD todavía no define.
+- **Base de precios (US-75):** en tensión con "los precios viven en el Excel". Supuesto propuesto: planilla estándar con columnas fijas desde el MVP, para poder leerla después.
+- **Documentos referenciados que faltan:** `docs/10-arquitectura-sistema-gaps.md` y "doc 09".
+
 ## Cómo tratar esto de acá en adelante
 
 Cuando una de estas decisiones se cierre, actualizar este archivo (mover el ítem a "resueltas" con la decisión tomada) y reflejar el cambio en `docs/prd.md` si corresponde. No asumir un valor no confirmado como definitivo en el diseño de datos o permisos sin dejarlo marcado como supuesto.
