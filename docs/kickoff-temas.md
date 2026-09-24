@@ -1,6 +1,8 @@
 # Kickoff — temas a cerrar
 
-Reunión de inicio formal del proyecto (Fernanda, Leonardo, Pablo, Mathi + Digito). Base: PRD v0.4 + RF-39..43 y backlog v1 (75 historias) en [`v1/`](v1/).
+Reunión de inicio formal del proyecto (Fernanda, Leonardo, Pablo, Mathi + Digito).
+
+> **La lista completa y actualizada de preguntas, riesgos y decisiones técnicas, con las respuestas de la reunión, está en el artefacto de seguimiento:** https://claude.ai/artifact/9MTH9ydmHrM6kPP6JeFeex. Este archivo queda como resumen inicial. Base: PRD v0.4 + RF-39..43 y backlog v1 (75 historias) en [`v1/`](v1/).
 
 ## 1 · Qué cambió en v1
 
@@ -43,7 +45,7 @@ MVP: 42 → 45 historias. V2: 11 → 13.
 
 ## 3 · Temas que siguen abiertos desde v0.4
 
-- **Quién desarrolla y con qué stack.** El PRD sigue diciendo "Chivilo decide el stack (sugerencia: Google)" y "código y datos en GCP de Batfer". El mock de presentación está en Lovable + Supabase. Hay que definir el equipo, el stack y dónde se hospeda.
+- **Quién desarrolla.** El PRD sigue nombrando a Chivilo. Las decisiones técnicas las toma Digito (German); a Batfer solo se le confirma la restricción de que código y datos vivan en su GCP.
 - **Login del proveedor:** usuario + contraseña o magic link (D-09).
 - **Área/Región vs Unidad de negocio:** cómo se asigna cada comprador y qué ve cada Jefe. Si existe el Jefe General en el piloto.
 - **Reabrir:** según el PRD lo hace el Jefe de Compras, según US-69 el Comprador. ¿Los dos?

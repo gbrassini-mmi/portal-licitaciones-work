@@ -14,7 +14,7 @@ Plataforma interna para que Batfer gestione **cotizaciones a proveedores** (RFQ)
 
 Estamos en la **etapa de definición de producto** — todavía no hay código de la plataforma real. Esta carpeta contiene los documentos fuente que German (softechv.com) trajo para arrancar: un PRD, un desglose de requisitos por categoría, y el backlog completo de historias de usuario. Antes de escribir una sola línea de código conviene tener claro el alcance del MVP (ver abajo) y las [decisiones que todavía están abiertas](docs/decisiones-pendientes.md).
 
-**Nota sobre desarrollo:** el PRD dice que el desarrollo lo hace "Chivilo" (equipo externo, contacto Vázquez) y que el stack lo decide ese equipo (sugerencia: herramientas Google). Si quien está trabajando en esta carpeta es parte de ese desarrollo, buena señal; si no, vale la pena confirmar con quien corresponda (Mathi / Leo) cómo se coordina este trabajo con lo que arma Chivilo, para no duplicar ni pisar decisiones de stack.
+**Desarrollo y decisiones técnicas:** las decisiones técnicas (stack, hospedaje, storage, login del proveedor, modelo de datos) las toma **German Brassini (Digito)**. El PRD todavía menciona a Chivilo como equipo de desarrollo que elige el stack; ese texto quedó desactualizado y se confirma en el kickoff. No tomar decisiones de arquitectura por cuenta propia: proponer opciones con una recomendación y dejar que German decida.
 
 ## Qué se va a construir acá
 
@@ -28,7 +28,7 @@ Según lo conversado: una **app** (el portal en sí — la interfaz de comprador
 | [`docs/historias-usuario.md`](docs/historias-usuario.md) | Las 75 historias de usuario del backlog v1 (45 MVP / 13 Versión 2 / 17 fuera), con criterio de aceptación y dependencias entre historias. Espejo en Markdown de `docs/v1/Historias-de-Usuario (1).xlsx` (fuente autoritativa por sus columnas de prioridad/estimación). |
 | [`docs/decisiones-pendientes.md`](docs/decisiones-pendientes.md) | Qué está resuelto, qué es un supuesto revisable, y qué falta confirmar con Mathi/Leo/Renzo antes de dar algo por sentado. **Revisar esto antes de tomar decisiones de diseño de datos o de permisos.** |
 | [`docs/v1/`](docs/v1/) | **Requisitos v1 (fuente autoritativa actual):** PRD en PDF con RF-39..43, `Historias-de-Usuario (1).xlsx` (75 historias) y `Requisitos-por-Categoria (1).xlsx`. Los `.md` de `docs/` ya reflejan este contenido. |
-| [`docs/kickoff-temas.md`](docs/kickoff-temas.md) | Qué cambió en v1, preguntas sobre los requisitos nuevos y temas abiertos para el kickoff. |
+| [`docs/kickoff-temas.md`](docs/kickoff-temas.md) | Qué cambió en v1, preguntas sobre los requisitos nuevos y temas abiertos para el kickoff. El seguimiento de respuestas vive en el artefacto https://claude.ai/artifact/9MTH9ydmHrM6kPP6JeFeex (60 preguntas, 12 riesgos, 9 decisiones técnicas). |
 | [`docs/lovable-mockup-prompt.md`](docs/lovable-mockup-prompt.md) | Prompt listo para pegar en Lovable: genera un mockup navegable de presentación (datos mock, Supabase para auth/DB) con la página de bienvenida/flujo/tareas pedida para pitchear el producto antes de construir el sistema real. |
 | `PRD-Portal-Cotizaciones.md` / `PRD-Portal-Cotizaciones (1).md` | Fuentes originales (Word→md) del PRD. El segundo es un duplicado con errores de OCR — `docs/prd.md` ya los consolida a ambos; estos dos quedan como respaldo crudo. |
 | `Requisitos-por-Categoria.md` / `.xlsx` | Las mismas 70 historias organizadas por categoría (🟢 Mínimo / 🔵 Versión 2 / ⚪ Fuera), en formato para que Compras deje comentarios. Contenido ya reflejado en `docs/historias-usuario.md`. |
